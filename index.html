@@ -113,7 +113,7 @@
     </section>
 
     <section class="relative bg-gray-100" id="shorten" role="form">
-      <div class="max-w-4xl mx-auto p-6 space-y-6">
+      <div class="max-w-4xl mx-auto p-6 space-y-6" id="form-wrapper">
         <!-- Form -->
         <form
           id="link-form"
@@ -229,39 +229,85 @@
       </div>
     </section>
 
-    <footer class="bg-veryDarkViolet" role="contentinfo">
-      <div class="container flex flex-col-reverse justify-between p-6 mx-auto space-y-16 md:flex-row md:space-y-0">
-        <img src="images/logo.svg" alt="logo" class="mx-auto my-6 brightness-200 md:mx-0 md:my-0" />
+    <footer class="py-16 bg-veryDarkViolet" role="contentinfo">
+      <div
+      class="container flex flex-col items-center justify-between mx-auto space-y-16 md:flex-row md:space-y-0 md:items-start"
+    >
+      <!-- Logo -->
+      <img src="images/logo.svg" alt="" />
 
-        <div class="flex justify-around space-x-32">
-          <div class="flex flex-col space-y-3 text-white">
-            <h5 class="mb-1 font-bold">Features</h5>
-            <a href="#" class="text-grayishViolet hover:text-cyan">Link Shortening</a>
-            <a href="#" class="text-grayishViolet hover:text-cyan">Branded Links</a>
-            <a href="#" class="text-grayishViolet hover:text-cyan">Analytics</a>
-          </div>
-          <div class="flex flex-col space-y-3 text-white">
-            <h5 class="mb-1 font-bold">Resources</h5>
-            <a href="#" class="text-grayishViolet hover:text-cyan">Blog</a>
-            <a href="#" class="text-grayishViolet hover:text-cyan">Developers</a>
-            <a href="#" class="text-grayishViolet hover:text-cyan">Support</a>
-          </div>
-          <div class="flex flex-col space-y-3 text-white">
-            <h5 class="mb-1 font-bold">Company</h5>
-            <a href="#" class="text-grayishViolet hover:text-cyan">About</a>
-            <a href="#" class="text-grayishViolet hover:text-cyan">Our Team</a>
-            <a href="#" class="text-grayishViolet hover:text-cyan">Careers</a>
-            <a href="#" class="text-grayishViolet hover:text-cyan">Contact</a>
+      <!-- Menus Container -->
+      <div
+        class="flex flex-col space-y-16 md:space-x-20 md:flex-row md:space-y-0"
+      >
+        <!-- Menu 1 -->
+        <div class="flex flex-col items-center w-full md:items-start">
+          <div class="mb-5 font-bold text-white capitalize">Features</div>
+          <div class="flex flex-col items-center space-y-3 md:items-start">
+            <a href="#" class="capitalize text-grayishViolet hover:text-cyan"
+              >Link shortening</a
+            >
+            <a href="#" class="capitalize text-grayishViolet hover:text-cyan"
+              >Branded links</a
+            >
+            <a href="#" class="capitalize text-grayishViolet hover:text-cyan"
+              >Analytics</a
+            >
           </div>
         </div>
 
-        <div class="flex justify-around py-1 space-x-4">
-          <a href="#"><img src="images/icon-facebook.svg" alt="facebook" class="ficon"></a>
-          <a href="#"><img src="images/icon-twitter.svg" alt="twitter" class="ficon"></a>
-          <a href="#"><img src="images/icon-pinterest.svg" alt="pinterest" class="ficon"></a>
-          <a href="#"><img src="images/icon-instagram.svg" alt="instagram" class="ficon"></a>
+        <!-- Menu 2 -->
+        <div class="flex flex-col items-center w-full md:items-start">
+          <div class="mb-5 font-bold text-white capitalize">Resources</div>
+          <div class="flex flex-col items-center space-y-3 md:items-start">
+            <a href="#" class="capitalize text-grayishViolet hover:text-cyan"
+              >Blog</a
+            >
+            <a href="#" class="capitalize text-grayishViolet hover:text-cyan"
+              >Developers</a
+            >
+            <a href="#" class="capitalize text-grayishViolet hover:text-cyan"
+              >Support</a
+            >
+          </div>
+        </div>
+
+        <!-- Menu 3 -->
+        <div class="flex flex-col items-center w-full md:items-start">
+          <div class="mb-5 font-bold text-white capitalize">Company</div>
+          <div class="flex flex-col items-center space-y-3 md:items-start">
+            <a href="#" class="capitalize text-grayishViolet hover:text-cyan"
+              >About</a
+            >
+            <a href="#" class="capitalize text-grayishViolet hover:text-cyan"
+              >Our Team</a
+            >
+            <a href="#" class="capitalize text-grayishViolet hover:text-cyan"
+              >Careers</a
+            >
+            <a href="#" class="capitalize text-grayishViolet hover:text-cyan"
+              >Contact</a
+            >
+          </div>
         </div>
       </div>
+
+      <!-- Social Container -->
+      <div class="flex space-x-6">
+        <a href="#">
+          <img src="images/icon-facebook.svg" alt="" class="ficon" />
+        </a>
+        <a href="#">
+          <img src="images/icon-twitter.svg" alt="" class="ficon" />
+        </a>
+        <a href="#">
+          <img src="images/icon-pinterest.svg" alt="" class="ficon" />
+        </a>
+        <a href="#">
+          <img src="images/icon-instagram.svg" alt="" class="ficon" />
+        </a>
+      </div>
+    </div>
     </footer>
   </body>
 </html>

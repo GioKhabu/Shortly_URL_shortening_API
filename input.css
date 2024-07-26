@@ -61,3 +61,7 @@
 .open .hamburger-bottom {
   transform: rotate(-45deg) translateY(6px) translateX(-6px);
 }
+
+.short-text {
+  color: hsl(180, 66%, 49%);
+}

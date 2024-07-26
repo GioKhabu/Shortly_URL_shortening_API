@@ -3,6 +3,7 @@ const menu = document.getElementById("menu");
 const input = document.getElementById("link-input");
 const linkForm = document.getElementById("link-form");
 const errMsg = document.getElementById("err-msg");
+const formWrapper = document.getElementById('form-wrapper')
 
 btn.addEventListener("click", navToggle);
 linkForm.addEventListener("submit", formSubmit);
@@ -43,27 +44,17 @@ function formSubmit(e) {
   }
 }
 
-const corsProxy = "https://cors-anywhere.herokuapp.com/";
-const apiUrl = "https://cleanuri.com/api/v1/shorten";
+const apiUrl = "https://smolurl.com/api/links";
 
 async function shortenUrl(longUrl) {
   try {
-    // Prepare the body with the URL in its original form
-    const body = new URLSearchParams({
-      url: longUrl, // Use the original URL without additional encoding
-    });
-
-    // Log body to verify
-    console.log("Request Body:", body.toString(), corsProxy + apiUrl);
-
     const response = await fetch(apiUrl, {
       method: "POST",
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        "Accept": "application/json",
+        "Content-Type": "application/json",
       },
-      body: {
-        'url': longUrl.toString(),
-      },
+      body: JSON.stringify({ url: longUrl }),
     });
 
     if (!response.ok) {
@@ -75,8 +66,8 @@ async function shortenUrl(longUrl) {
     const data = await response.json();
     console.log("API Response:", data);
 
-    if (data.result_url) {
-      displayShortenedUrl(longUrl, data.result_url);
+    if (data.data && data.data.short_url) {
+      displayShortenedUrl(longUrl, data.data.short_url);
     } else if (data.error) {
       throw new Error(data.error);
     } else {
@@ -117,7 +108,6 @@ function displayShortenedUrl(originalUrl, shortUrl) {
     "flex-col",
     "items-center",
     "justify-end",
-    "flex-1",
     "space-x-4",
     "space-y-2",
     "md:flex-row",
@@ -125,7 +115,7 @@ function displayShortenedUrl(originalUrl, shortUrl) {
   );
 
   const shortLink = document.createElement("div");
-  shortLink.classList.add("font-bold", "text-cyan");
+  shortLink.classList.add("font-bold", "text-cyan", "short-text");
   shortLink.textContent = shortUrl;
 
   const copyButton = document.createElement("button");
@@ -152,7 +142,7 @@ function displayShortenedUrl(originalUrl, shortUrl) {
   shortLinkContainer.appendChild(copyButton);
   linkContainer.appendChild(originalLink);
   linkContainer.appendChild(shortLinkContainer);
-  document.getElementById("shorten").appendChild(linkContainer);
+  formWrapper.appendChild(linkContainer);
 
   input.value = ""; // Clear the input field after submission
 }
