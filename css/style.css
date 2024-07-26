@@ -502,6 +502,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .absolute {
   position: absolute;
 }
@@ -567,12 +579,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: -0.25rem;
 }
 
-.-ml-10 {
-  margin-left: -2.5rem;
+.-mt-14 {
+  margin-top: -3.5rem;
 }
 
 .mt-24 {
   margin-top: 6rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.-ml-10 {
+  margin-left: -2.5rem;
 }
 
 .mb-5 {
@@ -603,6 +623,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 100%;
 }
 
+.h-16 {
+  height: 4rem;
+}
+
 .h-20 {
   height: 5rem;
 }
@@ -621,6 +645,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-2 {
   width: 0.5rem;
+}
+
+.w-16 {
+  width: 4rem;
 }
 
 .w-20 {
@@ -715,10 +743,28 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
 
+.space-y-12 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(3rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(3rem * var(--tw-space-y-reverse));
+}
+
 .space-y-16 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(4rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(4rem * var(--tw-space-y-reverse));
+}
+
+.space-y-5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
+}
+
+.space-x-10 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(2.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-y-3 > :not([hidden]) ~ :not([hidden]) {
@@ -832,6 +878,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 1.5rem;
 }
 
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .py-16 {
   padding-top: 4rem;
   padding-bottom: 4rem;
@@ -843,6 +894,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pb-32 {
   padding-bottom: 8rem;
+}
+
+.pt-5 {
+  padding-top: 1.25rem;
 }
 
 .text-center {
@@ -869,6 +924,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 2.5rem;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -879,6 +939,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .italic {
   font-style: italic;
+}
+
+.leading-tight {
+  line-height: 1.25;
 }
 
 .text-grayishViolet {
@@ -1015,6 +1079,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     left: 4rem;
   }
 
+  .md\:mt-0 {
+    margin-top: 0px;
+  }
+
   .md\:mt-8 {
     margin-top: 2rem;
   }
@@ -1037,6 +1105,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:max-w-md {
     max-width: 28rem;
+  }
+
+  .md\:max-w-xl {
+    max-width: 36rem;
   }
 
   .md\:flex-row {
@@ -1065,6 +1137,12 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-left: calc(1.75rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
+  .md\:space-x-24 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(6rem * var(--tw-space-x-reverse));
+    margin-left: calc(6rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
   .md\:space-x-20 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-x-reverse: 0;
     margin-right: calc(5rem * var(--tw-space-x-reverse));
@@ -1076,13 +1154,28 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-bottom: 0.5rem;
   }
 
+  .md\:py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
   .md\:py-3 {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
   }
 
+  .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
   .md\:text-left {
     text-align: left;
+  }
+
+  .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 
   .md\:text-base {
