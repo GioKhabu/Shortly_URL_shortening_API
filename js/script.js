@@ -115,7 +115,7 @@ function displayShortenedUrl(originalUrl, shortUrl) {
   );
 
   const shortLink = document.createElement("div");
-  shortLink.classList.add("font-bold", "text-cyan", "short-text");
+  shortLink.classList.add("font-bold", "text-cyan", "short-text", "mr-1");
   shortLink.textContent = shortUrl;
 
   const copyButton = document.createElement("button");
